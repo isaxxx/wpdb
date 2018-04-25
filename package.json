@@ -1,0 +1,41 @@
+{
+  "name": "wpdb",
+  "version": "1.0.0",
+  "description": "Simple WordPress database CLI tool by WP-CLI.",
+  "main": "./index.js",
+  "bin": {
+    "wpdb": "./bin/wpdb"
+  },
+  "config": {
+    "localDomain": "http://localhost/~isakamasahide/wpdb",
+    "rereaseDomain": "http://wp.com"
+  },
+  "scripts": {
+    "test": "ava --verbose"
+  },
+  "keywords": [
+    "wordpress"
+  ],
+  "engines": {
+    "node": ">=6.11.4"
+  },
+  "author": "isaxxx",
+  "homepage": "https://isaxxx.com/works/wpdb",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isaxxx/wpdb"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.0",
+    "date-utils": "^1.2.21",
+    "fs-extra": "^5.0.0",
+    "mkdirp": "^0.5.1",
+    "shelljs": "^0.8.1",
+    "update-notifier": "^2.5.0",
+    "yargs": "^11.0.0"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0"
+  }
+}

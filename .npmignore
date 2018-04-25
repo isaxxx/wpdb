@@ -1,0 +1,5 @@
+wordpress
+tmp
+
+src/*
+!src/wpdb/config-sample.json
