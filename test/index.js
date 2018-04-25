@@ -9,5 +9,5 @@ test('read config file', (t) => {
 	}, (config) => {
 		// --locale=ja
 		t.is(config.core.locale, 'ja');
-	});
+	}, true);
 });
