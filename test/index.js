@@ -7,6 +7,7 @@ test('read config file', (t) => {
 	return wpdb({
 		config: 'test/config.json'
 	}, (config) => {
+		// --locale=ja
 		t.is(config.core.locale, 'ja');
 	});
 });
