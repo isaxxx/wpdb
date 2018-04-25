@@ -1,6 +1,6 @@
 {
   "name": "wpdb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple WordPress database CLI tool by WP-CLI.",
   "main": "./index.js",
   "bin": {
@@ -14,7 +14,8 @@
     "test": "ava --verbose"
   },
   "keywords": [
-    "wordpress"
+    "wordpress",
+    "wp-cli"
   ],
   "engines": {
     "node": ">=6.11.4"
