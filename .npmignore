@@ -1,5 +1,5 @@
 wordpress
+src/wpdb/export/*
+src/wpdb/import/*
+src/wpdb/config.json
 tmp
-
-src/*
-!src/wpdb/config-sample.json
