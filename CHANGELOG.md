@@ -1,3 +1,7 @@
+# 1.1.0 (2018-04-27)
+
+-   Publish npm
+
 # 1.0.3 (2018-04-27)
 
 -   Fix config file path
