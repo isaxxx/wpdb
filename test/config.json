@@ -4,13 +4,13 @@
 	},
 	"domain": {
 		"local": "http://localhost/~isakamasahide/wpdb/wordpress",
-  	"remote": "https://wordpress.org"
+  		"remote": "https://wordpress.org"
 	},
 	"db": {
 		"name": "wpdb",
 		"user": "root",
-		"password": "",
-		"import": "src/wpdb/import/wp.sql",
-		"export": "src/wpdb/export"
+		"password": "1234",
+		"import": "src/wp/import/wp.sql",
+		"export": "src/wp/export"
 	}
 }

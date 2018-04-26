@@ -1,3 +1,7 @@
+# 1.0.3 (2018-04-27)
+
+-   Fix config file path
+
 # 1.0.2 (2018-04-25)
 
 -   Pass Test

@@ -2,7 +2,7 @@
 npm-debug.log
 node_modules
 wordpress
-src/wpdb/export/*
-src/wpdb/import/*
-src/wpdb/config.json
+src/wp/export/*
+src/wp/import/*
+src/wp/config.json
 tmp
