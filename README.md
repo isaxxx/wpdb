@@ -71,8 +71,6 @@ $ wpdb --install
 }
 ```
 
-For more in depth documentation see: https://isaxxx.com/works/wpdb/
-
 ## [Changelog](CHANGELOG.md)
 
 ## [License](LICENSE)
