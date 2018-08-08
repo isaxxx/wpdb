@@ -8,7 +8,7 @@ Tools for Handling WordPress Database by Docker and WP-CLI.
 
 ## Installation
 
-### npm
+### NPM
 
 You must install [Docker](https://www.docker.com/) for this module to work.
 
