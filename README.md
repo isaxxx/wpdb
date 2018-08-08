@@ -26,7 +26,7 @@ Options:
   --help, -h      show this help. [boolean]
 ```
 
-### Initialize
+#### Initialize
 
 Install the Docker files.
 
