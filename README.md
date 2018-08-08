@@ -1,6 +1,6 @@
 # wpdb
 
-Simple WordPress database CLI tool by WP-CLI.
+Tools for Handling WordPress Database by Docker and WP-CLI.
 
 [![NPM](https://nodei.co/npm/wpdb.png)](https://nodei.co/npm/wpdb/)
 [![Build Status](https://travis-ci.org/isaxxx/wpdb.svg?branch=master)](https://travis-ci.org/isaxxx/wpdb)
@@ -10,66 +10,96 @@ Simple WordPress database CLI tool by WP-CLI.
 
 ### npm
 
-You must install wp-cli for this plugin to work. Please refer to http://wp-cli.org/ for information on getting started.
+You must install [Docker](https://www.docker.com/) for this module to work.
 
 ```bash
-$ npm install wpdb -g
+$ npm install wpdb --save
 ```
 
 ## Usage
 
+### CLI
+
 ```
 Options:
-  --config, -c    config json file path. [string] [require] [default: "src/wpdb/config.json"]
-  --import        import sql file path. [boolean] [default: false]
-  --export        export sql file path. [boolean] [default: false]
-  --install       install WordPress. [boolean] [default: false]
   --version, -v   show this version. [boolean]
   --help, -h      show this help. [boolean]
 ```
 
-## Example
+### Initialize
 
-##### import database
-
-```bash
-$ wpdb --import
-```
-
-##### export database
+Install the Docker files.
 
 ```bash
-$ wpdb --export
+$ wpdb
 ```
 
-##### install WordPress
+#### Start
+
+Start Docker.
 
 ```bash
-$ wpdb --install
+$ docker-compose up -d
 ```
 
-##### src/wpdb/config.json
+#### Stop
 
-```json
-{
-  "core": {
-    "locale": "locale here"
-  },
-  "domain": {
-    "local": "local domain here",
-    "remote": "remote domain here"
-  },
-  "db": {
-    "name": "database name",
-    "user": "database username",
-    "password": "database password",
-    "host": "localhost",
-    "prefix": "wp_",
-    "import": "import sql file path",
-    "export": "export directory path"
-  }
-}
+Stop Docker.
+
+```bash
+$ docker-compose down -v
 ```
+
+#### Import
+
+Import the SQL file.
+
+```bash
+$ docker-compose exec wordpress wp db import /var/lib/mysql/import.sql --allow-root
+```
+
+#### Export
+
+Export the SQL file.
+
+```bash
+$ docker-compose exec wordpress wp db export /var/lib/mysql/export.sql --allow-root
+```
+
+#### Replace
+
+##### Import
+
+```bash
+$ docker-compose exec wordpress wp db import /var/lib/mysql/import.sql --allow-root
+$ docker-compose exec wordpress wp search-replace http://example.com http://localhost:8000 --allow-root
+```
+
+##### Export
+
+```bash
+$ docker-compose exec wordpress wp search-replace http://localhost:8000 http://example.com --allow-root
+$ docker-compose exec wordpress wp db export /var/lib/mysql/export.sql --allow-root
+$ docker-compose exec wordpress wp search-replace http://example.com http://localhost:8000 --allow-root
+```
+
+### JavaScript
+
+```js
+wpdb().then(() => {
+  console.log('Complete!!');
+});
+```
+
+### Access
+
+* WordPress
+
+[http://localhost:8000/](http://localhost:8000/)
+
+* phpMyAdmin
+
+[http://localhost:8080/](http://localhost:8080/)
 
 ## [Changelog](CHANGELOG.md)
 

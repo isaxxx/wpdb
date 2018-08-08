@@ -1,8 +1,7 @@
 .DS_Store
 npm-debug.log
 node_modules
-wordpress
-src/wp/export/*
-src/wp/import/*
-src/wp/config.json
-tmp
+./docker/
+./mysql/
+./wp/
+./docker-compose.yml
