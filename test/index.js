@@ -2,7 +2,7 @@ const test = require('ava');
 const rimraf = require('rimraf');
 const wpdb = require('../index');
 
-test('init task', (t) => {
+test('init task - case 001', (t) => {
   return new Promise((resolve) => {
     rimraf('./docker/', () => {
       resolve();
