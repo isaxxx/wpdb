@@ -1,6 +1,6 @@
 {
   "name": "wpdb",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Tools for Handling WordPress Database by Docker and WP-CLI.",
   "main": "./index.js",
   "bin": {
@@ -37,6 +37,6 @@
   },
   "devDependencies": {
     "ava": "^0.25.0",
-    "eslint": "^5.3.0"
+    "eslint": "^5.11.0"
   }
 }

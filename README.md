@@ -83,6 +83,31 @@ $ docker-compose exec wordpress wp db export /var/lib/mysql/export.sql --allow-r
 $ docker-compose exec wordpress wp search-replace http://example.com http://localhost:8000 --allow-root
 ```
 
+##### Bash
+
+```bash
+$ docker exec -it wordpress /bin/bash
+```
+
+##### Composer
+
+```bash
+$ docker-compose exec wordpress composer -v
+```
+
+##### PHP CodeSniffer
+
+```bash
+$ docker-compose exec wordpress ./vendor/bin/phpcs --standard=PSR2 ./wp-content/themes/my-theme/
+```
+
+##### PHP CS Fixer
+
+```bash
+$ docker-compose exec wordpress ./vendor/bin/php-cs-fixer fix --dry-run --diff --diff-format udiff ./wp-content/themes/my-theme/
+$ docker-compose exec wordpress ./vendor/bin/php-cs-fixer fix ./wp-content/themes/my-theme/
+```
+
 ### JavaScript
 
 ```js
