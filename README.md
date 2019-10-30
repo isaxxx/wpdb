@@ -78,9 +78,19 @@ $ docker-compose exec wordpress wp search-replace http://example.com http://loca
 ##### Export
 
 ```bash
-$ docker-compose exec wordpress wp search-replace http://localhost:8000 http://example.com --allow-root
 $ docker-compose exec wordpress wp db export /var/lib/mysql/export.sql --allow-root
+```
+
+###### Upload
+
+```bash
+$ docker-compose exec wordpress wp search-replace http://localhost:8000 http://example.com --allow-root
+$ docker-compose exec wordpress wp db export /var/lib/mysql/upload.sql --allow-root
 $ docker-compose exec wordpress wp search-replace http://example.com http://localhost:8000 --allow-root
+```
+
+```bash
+$ docker-compose exec wordpress wp search-replace http://localhost:8000 http://example.com --export=/var/lib/mysql/upload.sql --allow-root
 ```
 
 ##### Bash
@@ -125,6 +135,10 @@ wpdb().then(() => {
 * phpMyAdmin
 
 [http://localhost:8080/](http://localhost:8080/)
+
+* MailHog
+
+[http://localhost:8025/](http://localhost:8025/)
 
 ## [Changelog](CHANGELOG.md)
 

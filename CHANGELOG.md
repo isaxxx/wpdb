@@ -1,3 +1,11 @@
+# 1.2.5 (2019-10-30)
+
+- Add: MailHog
+
+# 1.2.4 (2019-10-05)
+
+- Fix: docker mysql client name
+
 # 1.2.3 (2018-12-24)
 
 - Add: Composer
