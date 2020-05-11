@@ -51,6 +51,14 @@ Stop Docker.
 $ docker-compose down -v
 ```
 
+#### Reset
+
+Reset Database.
+
+```bash
+$ docker-compose exec wordpress wp db reset --allow-root
+```
+
 #### Import
 
 Import the SQL file.
