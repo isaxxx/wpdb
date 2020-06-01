@@ -11,6 +11,7 @@ services:
       MYSQL_PASSWORD: wordpress
     ports:
       - 3306:80
+    command: --innodb-use-native-aio=0
     volumes:
       - mysql:/var/lib/mysql
       - $PWD/mysql:/docker-entrypoint-initdb.d
@@ -28,7 +29,7 @@ services:
       - 8000:80
     volumes:
       - $PWD/mysql:/var/lib/mysql
-      - $PWD/wp:/var/www/html
+      - $PWD/public:/var/www/html
 
   phpmyadmin:
     depends_on:
@@ -50,4 +51,4 @@ services:
 
 volumes:
     mysql:
-    wp:
+    public:
