@@ -102,6 +102,22 @@ $ docker-compose exec wordpress wp search-replace http://example.com http://loca
 $ docker-compose exec wordpress wp search-replace http://localhost:8000 http://example.com --export=/var/lib/mysql/upload.sql --allow-root
 ```
 
+##### Change PHP Version
+
+Please change the first line of `/docker/wordpress/Dockerfile`.
+
+```
+# Default
+FROM wordpress:latest
+
+# PHP 7.0
+FROM wordpress:php7.0-apache
+```
+
+Please refer to the link below for usable containers.
+
+[WordPress Docker Official Images](https://hub.docker.com/_/wordpress/)
+
 ##### Bash
 
 ```bash
