@@ -1,6 +1,6 @@
 {
   "name": "wpdb",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "Tools for Handling WordPress Database by Docker and WP-CLI.",
   "main": "./index.js",
   "bin": {

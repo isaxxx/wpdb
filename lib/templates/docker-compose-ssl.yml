@@ -15,6 +15,7 @@ services:
     volumes:
       - mysql:/var/lib/mysql
       - $PWD/mysql:/docker-entrypoint-initdb.d
+      - $PWD/docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
 
   wordpress:
     build: $PWD/docker/wordpress
@@ -26,10 +27,14 @@ services:
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
     ports:
-      - 8000:80
+      - 80:80
+      - 443:443
     volumes:
       - $PWD/mysql:/var/lib/mysql
       - $PWD/public:/var/www/html
+      - $PWD/docker/wordpress/php.ini:/usr/local/etc/php/conf.d/php.ini
+      - $PWD/docker/certs/localhost+1.pem:/etc/ssl/certs/ssl-cert-snakeoil.pem
+      - $PWD/docker/certs/localhost+1-key.pem:/etc/ssl/private/ssl-cert-snakeoil.key
 
   phpmyadmin:
     depends_on:

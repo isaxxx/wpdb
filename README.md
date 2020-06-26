@@ -51,6 +51,14 @@ Stop Docker.
 $ docker-compose down -v
 ```
 
+#### Restart
+
+Restart Docker (When fixed php.ini etc.).
+
+```bash
+$ docker-compose restart
+```
+
 #### Reset
 
 Reset Database.
@@ -118,10 +126,16 @@ Please refer to the link below for usable containers.
 
 [WordPress Docker Official Images](https://hub.docker.com/_/wordpress/)
 
+##### Docker Logs
+
+```bash
+$ docker-compose logs | grep wordpress
+```
+
 ##### Bash
 
 ```bash
-$ docker exec -it wordpress /bin/bash
+$ docker-compose exec wordpress /bin/bash
 ```
 
 ##### Composer
@@ -143,6 +157,43 @@ $ docker-compose exec wordpress ./vendor/bin/php-cs-fixer fix --dry-run --diff -
 $ docker-compose exec wordpress ./vendor/bin/php-cs-fixer fix ./wp-content/themes/my-theme/
 ```
 
+### Use SSL
+
+#### Rename docker-comopse-ssl.yml and WordPress Docker file
+
+```bash
+$ cp ./docker-comopse-ssl.yml ./docker-compose.yml
+$ cp ./docker/wordpress/Dockerfile-ssl ./docker/wordpress/Dockerfile
+```
+
+#### Install mkcert
+
+```bash
+$ brew install mkcert
+$ brew install nss
+$ mkcert -install
+```
+
+#### make SSL Certificate
+
+```bash
+$ cd ./docker/certs/
+$ mkcert localhost 127.0.0.1
+$ ls
+---
+localhost+1-key.pem
+localhost+1.pem
+```
+
+#### Docker Build & Start
+
+```bash
+$ docker-compose build
+$ docker-compose up -d
+```
+
+Access SSL URL !!!
+
 ### JavaScript
 
 ```js
@@ -155,7 +206,19 @@ wpdb().then(() => {
 
 * WordPress
 
-[http://localhost:8000/](http://localhost:8000/)
+[http://localhost](http://localhost)
+
+* WordPress（SSL）
+
+[https://localhost](https://localhost)
+
+Please Edit Hosts File. Then you will be able to access it with the URL you want.
+
+```bash
+$ sudo vi /etc/hosts
+---
+127.0.0.1       example.com
+```
 
 * phpMyAdmin
 
