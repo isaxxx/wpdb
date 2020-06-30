@@ -89,7 +89,7 @@ $ docker-compose exec wordpress wp db export /var/lib/mysql/export.sql --allow-r
 
 ```bash
 $ docker-compose exec wordpress wp db import /var/lib/mysql/import.sql --allow-root
-$ docker-compose exec wordpress wp search-replace http://example.com http://localhost:8000 --allow-root
+$ docker-compose exec wordpress wp search-replace http://example.com http://localhost --allow-root
 ```
 
 ##### Export
@@ -101,13 +101,19 @@ $ docker-compose exec wordpress wp db export /var/lib/mysql/export.sql --allow-r
 ###### Upload
 
 ```bash
-$ docker-compose exec wordpress wp search-replace http://localhost:8000 http://example.com --allow-root
+$ docker-compose exec wordpress wp search-replace http://localhost http://example.com --allow-root
 $ docker-compose exec wordpress wp db export /var/lib/mysql/upload.sql --allow-root
-$ docker-compose exec wordpress wp search-replace http://example.com http://localhost:8000 --allow-root
+$ docker-compose exec wordpress wp search-replace http://example.com http://localhost --allow-root
 ```
 
 ```bash
-$ docker-compose exec wordpress wp search-replace http://localhost:8000 http://example.com --export=/var/lib/mysql/upload.sql --allow-root
+$ docker-compose exec wordpress wp search-replace http://localhost http://example.com --export=/var/lib/mysql/upload.sql --allow-root
+```
+
+##### ACF Block
+
+```bash
+$ docker-compose exec wordpress wp search-replace 'http:\/\/example.com' 'http:\/\/localhost' --allow-root
 ```
 
 ##### Change PHP Version

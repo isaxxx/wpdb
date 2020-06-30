@@ -1,4 +1,5 @@
-./docker/
-./mysql/
-./wp/
-./docker-compose.yml
+/docker/
+/mysql/
+/public/
+/docker-compose.yml
+/docker-compose-ssl.yml
